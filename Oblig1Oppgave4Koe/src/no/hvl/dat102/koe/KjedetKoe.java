@@ -20,35 +20,29 @@ public class KjedetKoe<T> implements KoeADT<T> {
 
 	public void leggTil(T element) {
 		LinearNode<T> node = new LinearNode<T>(element);
-		LinearNode<T> denne = front;
 
 		if (front == null) {
 			front = node;
+			bak = node;
+		} else {
+			bak.setNeste(node);
+			bak = node;
 		}
 
-		else {
-			for (int i = 0; i < antall; i++) {
-				if (denne.getNeste() == null) {
-					denne.setNeste(node);
-				} else {
-					denne = denne.getNeste();
-				}
-			}
-		}
 		antall++;
 	}
 
 	// fjerner det elementet som er først i køen
 	public T slett() throws EmptyCollectionException {
-		if(erTom()) {
+		if (erTom()) {
 			throw new EmptyCollectionException("Køen er tom");
 		}
-		
+
 		T slettet = front.getElement();
 		front = front.getNeste();
-		
+
 		antall--;
-		
+
 		return slettet;
 	}
 
@@ -56,13 +50,13 @@ public class KjedetKoe<T> implements KoeADT<T> {
 	public int antall() {
 		return antall;
 	}
-
+	
 	// Sjekker om køen er tom
 	public boolean erTom() {
-		return(front == null);
+		return (front == null);
 	}
-	
-	//Returnerer elementet først i køen
+
+	// Returnerer elementet først i køen
 	public T første() {
 		return front.getElement();
 	}
