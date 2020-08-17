@@ -6,6 +6,10 @@
           <option name="url" value="https://github.com/h581267/DAT102-Kiese.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/lars-petter-helland/dat108-h2020.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/IdeaProjects" />
